@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'top#index'
-  resource :top
-  resource :login
+  resources :top
+  resources :login
 
   resources :users
   resources :groups
