@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  root 'top#index'
+  resource :top
+  resource :login
+
+  resources :users
+  resources :groups
+  resources :games
+
+  namespace :admin do
+    resources :users
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
