@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title
+      | AppLoader
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-default role="navigation"
+      .container-fluid
+        .navbar-header
+          a.navbar-brand href="/"
+            | AppLoader
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a href="#" アップロード
+          form.navbar-form.navbar-left role="search"
+            .form-group
+              input.form-control type="text"
+            button.btn.btn-default type="submit"
+              span.glyphicon.glyphicon-flash
+          ul.nav.navbar-nav.navbar-right
+            li.dropdown
+              a#admin.dropdown-toggle data-toggle="dropdown" href="#" role="button"
+                span.glyphicon.glyphicon-cog
+                | 管理者メニュー
+              ul.dropdown-menu role="menu" aria-labelledby="admin"
+                li
+                  a href="#" ユーザ管理
+                li
+                  a href="#"
+                    | グループ管理
+            li.dropdown
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                span.glyphicon.glyphicon-user
+                | ユーザ管理
+              ul.dropdown-menu role="menu"
+                li
+                  a href="#"
+                    | ユーザ管理
+                li
+                  a href="#"
+                    | グループ管理
+
+
+    .container
+      .row
+        .col-md-9
+          = yield
