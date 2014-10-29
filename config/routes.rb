@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   resource :top, only: [:index]
   resource :login
-  resources :users, only: [:edit, :show]
+  resources :users, only: [:index, :edit]
   resources :groups, only: [:index, :show, :new, :edit]
   resources :games, only: [:index, :show, :new, :edit]
 
   namespace :admin do
-    resources :users, only: %i(index, edit, new)
+    resources :users, only: %i(index edit new)
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
