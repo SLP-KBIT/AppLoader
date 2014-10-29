@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit]
   resources :groups, only: [:index, :show, :new, :edit]
   resources :games, only: [:index, :show, :new, :edit]
-  post "games/search" => "games#search"
+  get "games/search" => "games#search"
 
   namespace :admin do
     resources :users, only: %i(index edit new)
