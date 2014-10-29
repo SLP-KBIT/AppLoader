@@ -1,13 +1,12 @@
 .panel
-  .panel-body.bg-danger
-    table.col-xs-12
-      tbody
-        tr
-          td あなたが所属するグループが作成したゲームです。
-          td style="text-align:right"
-            button.btn.btn-danger
-              span.glyphico.glyphicon-pencil
-              |編集
+  .panel-body.bg-warning.row
+    .col-xs-9
+      p.h5 あなたが所属するグループが作成したゲームです。
+    .col-xs-3
+      div style="text-align:right"
+        button.btn.btn-danger
+          span.glyphico.glyphicon-pencil
+          |編集
 
 table.col-xs-12
   tbody
@@ -21,9 +20,11 @@ table.col-xs-12
       td.h4 style="text-align:right" colspan="2" 2014.10.28更新
     tr
       td.col-xs-2
-      td.col-xs-4
+      td.col-xs-6
         .panel.panel-default
-          .panel-body.h4 チームビタミン
+          .panel-body.h4
+            img.img-thumbnail src="" width="70" height="70"
+            |チームビタミン
       td.col-xs-6
     tr
       td &nbsp
@@ -108,12 +109,14 @@ h3.h3 コメント
 
 .panel.panel-default
   .pnanel-body
-    form.form-group
-      label 名前
-      input.form-control type="text" placeholder="名前を入力してください。"
-      br
-      label コメント
-      textarea.form-control rows="5" placeholder="コメントを入力してください。"
+    .row
+      p.col-xs-1
+      form.form-group.col-xs-10
+        label.label-contorl 名前
+        input.form-control type="text" placeholder="名前を入力してください。"
+         br
+         label.label-control コメント
+         textarea.form-control rows="5" placeholder="コメントを入力してください。"
 
 .panel.panel-default
   .panel-body
