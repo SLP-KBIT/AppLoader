@@ -1,0 +1,47 @@
+h1 ユーザ設定
+
+br
+
+.row
+    form role ="form"
+        .form-group
+            label.col-sm-2 align="right" for="InputIconImage" アイコン
+            div class="col-sm-2"
+                input#InputIconImage type="file"
+
+br
+
+form.form-horizontal role="form"
+    .form-group.form-group-lg
+        label.col-sm-2.control-label for="InputAccountName" アカウント名
+        .col-sm-10
+            input#InputAccountName type="text" class="form-control" placeholder="Account Name"
+
+br
+
+form.form-horizontal role="form"
+    .form-group.form-group-lg
+        label.col-sm-2.control-label for="InputUserName" ユーザ名
+        .col-sm-10
+            input#InputUserName type="text" class="form-control" placeholder="User Name"
+
+br
+
+form.form-horizontal role="form"
+    .form-group.form-group-lg
+        label.col-sm-2.control-label for="InputPassword" パスワード
+        .col-sm-10
+            input#InputPassword type="password" class="form-control" placeholder="Password"
+
+br
+
+form.form-horizontal role="form"
+    .form-group.form-group-lg
+        label.col-sm-2.control-label for="ConfirmPassword" パスワード(確認用) 
+        .col-sm-10
+            input#ConfirmPassword type="password" class="form-control" placeholder="Same Password"
+
+br
+
+div align="center"
+    button.btn.btn-primary type="button" 完了
