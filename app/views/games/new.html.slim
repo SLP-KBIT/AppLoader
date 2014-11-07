@@ -4,50 +4,66 @@ br
 br
 
 .row
+  .col-xs-6
+    .row
+      form.form-group
+        .col-xs-4
+          label.control-label
+            |アップロード
+            br するゲーム
+        .col-xs-8
+          input type="file"
+  .col-xs-6
+    .row
+      form.form-group
+        .col-xs-4
+          label.control-label プラットフォーム
+        .col-xs-8
+          select.form-control
+            option プラットフォームを選択
+            option オンライン
+            option パソコン
+            option スマートフォン
+
+br
+
+.row
   .col-xs-6 
-    form.form-group
-      label.control-label.col-xs-3 タイトル
-      .col-xs-9
-        input.form-control type="text" placeholder="ゲームのタイトル"
+    .row
+      form.form-group
+        .col-xs-3
+          label.control-label タイトル
+        .col-xs-9
+          input.form-control type="text" placeholder="ゲームのタイトル"
   .col-xs-6
-    form.form-group
-      label.control-label.col-xs-4 バージョン
-      .col-xs-8
-        input.form-control type="text" placeholder="(例) 1.1.2"
+    .row
+      form.form-group
+        .col-xs-3
+          label.control-label バージョン
+        .col-xs-9
+          input.form-control type="text" placeholder="(例) 1.1.2"
 
 br
-
-.form-group
-  label.control-label.col-xs-2 アイコン画像
-  .col-xs-10
-    input.h5 type="file"
-
-br
-
 .row
   .col-xs-6
-    .form-group
-      label.control-label.col-xs-4 アップロードするゲーム
-      .col-xs-8
-        select.form-control 
-          option プラットフォームを選択
-          option オンライン
-          option パソコン
-          option スマートフォン
-  .col-xs-6 
-    input.h5 type="file"
-
+    .row
+      form.form-group
+        label.control-label.col-xs-3 アイコン画像
+        input.h5.col-xs-9 type="file"
 br
-
-.form-group
-  label.label-control.col-xs-4 ゲーム作成したグループ
+.row
   .col-xs-6
-    select.form-control
-      option グループを選択
-      option Group A
-      option Group C
-      option Group F
-      option Group G
+    .row
+      form.form-group
+        .col-xs-3
+          label.control-label 作成したグループ
+        .col-xs-9
+          select.form-control
+            option グループを選択
+            option Group A
+            option Group C
+            option Group F
+            option Group G
 
 br
 br
@@ -55,98 +71,56 @@ br
 .row
   .col-xs-5
     form.form-group
-      label.control-label.col-xs-3 タグ1
-    .col-xs-9
-      input.form-control type="text" placeholder="タグ名"
+      .row
+        .col-xs-3
+          label.control-label タグ1
+        .col-xs-9
+          input.form-control type="text" placeholder="タグ名"
   .col-xs-5
     form.form-group
-      label.control-label.col-xs-3 タグ2
-    .col-xs-9
-      input.form-control type="text" placeholder="タグ名"
-
-br
-
-.row
-  .col-xs-5
-    form.form-group
-      label.control-label.col-xs-3 タグ3
-    .col-xs-9
-      input.form-control type="text" placeholder="タグ名"
-  .col-xs-5
-    form.form-group
-      label.control-label.col-xs-3 タグ4
-    .col-xs-9
-      input.form-control type="text" placeholder="タグ名"
-
-br
-
-.row
-  .col-xs-5
-    form.form-group
-      label.control-label.col-xs-3 タグ5
-    .col-xs-9
-      input.form-control type="text" placeholder="タグ名"
-  .col-xs-5
-    form.form-group
-      label.control-label.col-xs-3 タグ6
-    .col-xs-9
-      input.form-control type="text" placeholder="タグ名"
+      .row
+        .col-xs-3
+          label.control-label タグ2
+        .col-xs-9
+          input.form-control type="text" placeholder="タグ名"
   .col-xs-2
     button.btn.btn-default
       span.glyphicon.glyphicon-plus
-
-br
-br
-
-.form.form-group
-  label.label-control.col-xs-2 説明文
-  .col-xs-10 
-    textarea.form-control rows="7" placeholder="マークダウン記法で書いてください。"
+      |&nbspフォームを追加
 
 br
 br
 
 .row
-  .form-group
-    label.control-label.col-xs-3 キャプチャ画像1
-    .col-xs-7
-      input.h5 type="file"
+  .form.form-group
+    .col-xs-2
+      label.control-control 説明文
+    .col-xs-10 
+      textarea.form-control rows="7" placeholder="マークダウン記法で書いてください。"
 
+br
 br
 
 .row
-  .form-group
-    label.control-label.col-xs-3 キャプチャ画像2
-    .col-xs-7
-      input.h5 type="file"
-
-br
-
-.row
-  .form-group
-    label.control-label.col-xs-3 キャプチャ画像3
-    .col-xs-7
-      input.h5 type="file"
-
-br
-
-.row
-  .form-group
-    label.control-label.col-xs-3 キャプチャ画像4
-    .col-xs-7
+  form.form-group
+    .col-xs-2
+      label.control-label キャプチャ画像1
+    .col-xs-8
       input.h5 type="file"
     .col-xs-2
       button.btn.btn-default
         span.glyphicon.glyphicon-plus
+        |&nbsp フォームを追加
 
 br
 br
 
 .row
- .form-group
-   label.control-label.col-xs-2 動画
-   .col-xs-10
-     input.h5 type="file"
+  .form-group
+    .col-xs-2
+      label.control-label 動画
+    .col-xs-10
+      input.h5 type="file"
 
 br
 br
