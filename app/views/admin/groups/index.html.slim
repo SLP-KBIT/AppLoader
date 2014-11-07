@@ -1,0 +1,42 @@
+h1 グループ管理
+br
+br
+/table.table.table-bordered
+/  tr
+    td#list チームA
+    td = modal_toggle({:href=>"#new", :role=>"button"}) do "編集" end
+    td = modal_toggle({:href=>"#delete", :role=>"button"}) do "削除" end
+
+h3 チームA <button type="button" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#demo">
+  +
+  </button>
+        <div id="demo" class="collapse">
+            <ul><h4>
+                <li><a href="#">hoge</a></li>
+                <li><a href="#">foo</a></li>
+                <li><a href="#">bar</a></li>
+            </ul></h4>
+        </div>
+
+<div id="delete" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content" style="width:370px; margin-left: -460px">
+<div class="modal-header"><strong>ヘッダ</strong></div>
+<div class="modal-body"><h1>よろしいですか</h1></div>
+<div class="modal-footer">
+<button class="btn btn-danger">はい</button>
+<button class="btn btn-primary">いいえ</button>
+</div></div></div></div>
+
+<div id="new" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content" style="width:500px; margin-left: -460px;">
+<div class="modal-header"><h3>ユーザ作成</h3></div>
+<div class="modal-body">
+<form class="form-horizontal" role="form"><div class="form-group">
+<label for="inputEmail3" class="col-sm-3 control-label">アカウント名</label>
+<div class="col-sm-8"><input type="email" class="form-control" id="inputEmail3" placeholder="poulenc"></div></div>
+<div class="form-group"><label for="inputPassword3" class="col-sm-3 control-label">パス</label><div class="col-sm-8"><input type="password" class="form-control" id="inputPassword3" placeholder="Password"></div></div>
+<div class="form-group"><label for="inputPassword3" class="col-sm-3 control-label">パス（再確認）</label><div class="col-sm-8"><input type="password" class="form-control" id="inputPassword3" placeholder="Password"></div></div></form></div>
+<div class="modal-footer"><button class="btn btn-primary">はい</button><button class="btn btn-primary">いいえ</button></div></div></div></div>
+

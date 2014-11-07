@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: %i(index edit new)
+    resources :groups, only: %i(index edot new)
   end
 end
