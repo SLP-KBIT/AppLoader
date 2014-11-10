@@ -1,41 +1,33 @@
-h1 グループ作成
+.h1 グループ作成
 
 br
 
 .row
-    form role ="form"
+    form.form-horizontal role ="form"
         .form-group
             label.col-sm-2 align="right" for="InputIconImage" アイコン
-            .col-sm-2
+            .col-sm-8
                 input#InputIconImage type="file"
+                .help-block 推奨サイズは140×140です。
 
+        .form-group.form-group-lg
+            label.col-sm-2.control-label for="InputGroupName" グループ名
+            .col-sm-8
+                input#InputGroupName type="text" class="form-control"
+
+        .form-group.form-group-lg
+            label.col-sm-2.control-label for="InputIntroduction" 概要
+            .col-sm-8
+                textarea#InputIntroduction class="form-control" rows="3"
+
+        .form-group.form-group-lg
+            label.col-sm-2.control-label for="InputMemberName" メンバー1
+            .col-sm-8
+                input#InputMemberName type="text" class="form-control"
+
+        .col-sm-2
+            div align="right"
+                button.btn.btn-default type="button" +メンバー追加
 br
-
-form.form-horizontal role="form"
-    .form-group.form-group-lg
-        label.col-sm-2.control-label for="InputGroupName" グループ名
-        .col-sm-10
-            input#InputGroupName type="text" class="form-control" placeholder="Group Name"
-
-br
-
-form.form-horizontal role="form"
-    .form-group.form-group-lg
-        label.col-sm-2.control-label for="InputIntroduction" 概要
-        .col-sm-10
-            textarea#InputIntroduction class="form-control" rows="3" placeholder="Introduction"
-
-br
-
-form.form-horizontal role="form"
-    .form-group.form-group-lg
-        label.col-sm-2.control-label for="InputMemberName" メンバー1
-        .col-sm-10
-            input#InputMemberName type="text" class="form-control" placeholder="Member Name"
-
-button.btn.btn-default type="button" +
-
-br
-
 div align="center"
-    button.btn.btn-primary.btn-lg type="button" 完了
+        button.btn.btn-primary type="button" onclick="location.href='../groups'" 完了

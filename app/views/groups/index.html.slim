@@ -1,14 +1,17 @@
-table border="0"
-    tbody
-        tr
-            td
-                p class="text-primary" あなたが所属するグループです。
-            td
-                button.btn.btn-warning type="button" onclick="location.href='groups/1/edit'" 編集
-
-br
-
 .row
+    .col-sm-2
+    .col-sm-8
+        .alert.alert-info role="alert"
+            table border="0"
+                tbody
+                    tr 
+                        td 
+                            .h4 あなたが所属するグループです。 
+                        td
+                            button.btn.btn-warning type="button" onclick="location.href='../groups/1/edit'" 編集
+
+br  
+    .col-sm-2
     .col-sm-4
         table border="0"
             thead
@@ -16,43 +19,47 @@ br
                 tr
                     img.img-thumbnail width="140" height="140" src="..." alt="..."
                 tr
-                    h2 Group-Name
-                tr
-                    td
-                        br
-                tr
-                    td colspan="2" 作成したゲーム
-                tr
-                    td
-                        img.img-rounded width="50" height="50" src="..." alt="..."
-                    td
-                        a href="#" Game-A
-                tr
-                    td
-                        img.img-rounded width="50" height="50" src="..." alt="..."
-                    td
-                        a href="#" Game-B
-    .col-sm-4
-        table border="0" 
-                tr
-                    td colspan="2" 概要
-                tr
-                    td colspan="2"
-                        pre このグループは、SAOを開発するために作られた。
-                            開発期間は１年である。
-                tr
-                    td
-                        br
-                tr
-                    td  メンバー
-                tr
-                    td width="60"
-                        img.img-rounded width="50" height="50" src="..." alt="..."
-                    td
-                        a href="#" Member-A
-                tr
-                    td width="60"
-                        img.img-rounded width="50" height="50" src="..." alt="..."
-                    td
-                        a href="#" Member-B
+                    .h2 Group-Name
+        br
+        .panel.panel-success
+            .panel-heading
+                .h4.panel-title 作成したゲーム
+            .panel-body
+                table border="0"
+                    tr
+                        td
+                            img.img-rounded width="50" height="50" src="..." alt="..."
+                        td
+                            a href="#" オフトゥン・クエスト
+                    tr
+                        td
+                            img.img-rounded width="50" height="50" src="..." alt="..."
+                        td
+                            a href="#" THE KUSONEMI M@STER
+    table.col-sm-4 border="0" 
+        tr
+            td colspan="2"
+                    .h4 概要
+        tr
+            td colspan="2"
+                pre このグループは、SAOを開発するために作られた。
+                    開発期間は１年であり、期間延長は原則認めないものとする。
+                    開発環境として、ナーヴギアを用いる。
+                    被験者は開発者自身とする。
+            tr
+                td
+                    br
+            tr
+                td colspan="2"
+                    .h4 メンバー
+            tr
+                td width="60"
+                    img.img-rounded width="50" height="50" src="..." alt="..."
+                td
+                    a href="../users" Member-A
+            tr
+                td width="60"
+                    img.img-rounded width="50" height="50" src="..." alt="..."
+                td
+                    a href="../users" Member-B
 
