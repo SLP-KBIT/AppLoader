@@ -4,9 +4,7 @@
       p.h5 あなたが所属するグループが作成したゲームです。
     .col-xs-3
       div style="text-align:right"
-        button.btn.btn-warning
-          span.glyphico.glyphicon-pencil
-          |&nbsp編集
+        = link_to("編集", edit_game_path(1), method: :get, class:"btn btn-warning")
 
 table
   .row
