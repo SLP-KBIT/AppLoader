@@ -1,220 +1,213 @@
-.alert.alert-warning
-  .row
-    .col-xs-9
-      p.h5 あなたが所属するグループが作成したゲームです。
-    .col-xs-3
-      div style="text-align:right"
-        = link_to("編集", edit_game_path(1), method: :get, class:"btn btn-warning")
-
-table
-  .row
-    tbody
-      tr
-        td.col-xs-3 rowspan="2"
-          img.img-thumbnail src="..." width="140" height="140"
-        td.col-xs-5.h1  style="text-align:left" GAME TITLE
-        td.col-xs-4
-      tr
-        td.h4 style="text-align:right" 
-          |バージョン 1.1.2
-          br 2014.10.28更新
-        td.h4 style="text-align:right"
-          img.img-thumbnail src="..." width="50" height="50"
-          |チームビタミン
-      tr
-        td &nbsp
-      tr
-        td &nbsp
-
-table
-  tbody
-    tr
-      td rowspan="2" 
-        button.btn.btn-success.btn-lg ダウンロード
-      td.h4 &nbsp 100,000ダウンロード
-    tr
-      td.h4 &nbsp スマートフォン用
-
-br
-br
-
-p.h4
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-  a Tag
-  |&nbsp &nbsp
-
-p
-  .panel.panel-default
-   .panel-body
-     |ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.
-
-
-.panel.panel-default
-  .panel-body
-    table.col-xs-12
-      tbody
-        tr
-          td
-            img.img-thumbnail src="..." width="100" height="100"
-          td
-            img.img-thumbnail src="..." width="100" height="100"
-          td
-            img.img-thumbnail src="..." width="100" height="100"
-          td
-            img.img-thumbnail src="..." width="100" height="100"
-          td
-            img.img-thumbnail src="..." width="100" height="100"
-
-
-img src="..." width="640" height="360"
-
-br
-br
-
-table
-  tbody
-    tr
-      td &nbsp
-    tr
-      td rowspan="2"
-        button.btn.btn-success.btn-lg ダウンロード
-      td.h4 &nbsp 100,000ダウンロード
-    tr
-      td.h4 &nbsp スマートフォン用
-
-br
-br
-
-.panel.panel-default
-  .pnanel-body
-    h3.h3 コメント
+.row
+  .col-xs-1
+  .col-xs-10
+    .alert.alert-warning
+      .row
+        .col-xs-9
+          p.h5 あなたが所属するグループが作成したゲームです。
+        .col-xs-3
+          div style="text-align:right"
+            = link_to("編集", edit_game_path(1), method: :get, class:"btn btn-warning")
+    
     .row
-      .col-xs-1
-      .col-xs-10
-        form.form-group
-          label.contorl-label 名前
-          input.form-control type="text" placeholder="名前を入力してください。"
+      div style="margin:10px 0px"
+        .col-xs-2
+          img.img-thumbnail src="..." width="140" height="140"
+        .col-xs-6
+          h1 style="text-align:left" GAME TITLE
           br
-          label.control-label コメント
-          textarea.form-control rows="5" placeholder="コメントを入力してください。"
+          h4 style="text-align:right" 
+            |バージョン 1.1.2
+            br 2014.10.28更新
+        .col-xs-3
+          h1 &nbsp
           br
-            div style="text-align:right"
-              button.btn.btn-primary 投稿
+          h4 style="text-align:right"
+            img.img-thumbnail src="..." width="50" height="50"
+            |チームビタミン
+        .col-xs-1
+    
+    .row
+      div style="margin:10px 0px 30px"
+        .col-xs-2
+          button.btn.btn-success.btn-lg ダウンロード
+        .col-xs-3
+          h4
+            | 100,000回のダウンロード
+            br スマートフォン用
+    
+    div style="margin:10px 0px"
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+      a.btn-link.btn-lg Tag
+      |&nbsp &nbsp
+    
+    div style="margin:10px 0px"
+      .panel.panel-default
+       .panel-body
+         |ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.
+    
+    div style="margin:10px 0px" 
+      .panel.panel-default
+        .panel-body
+          table
+            tbody
+              tr
+                td 
+                  img.img-thumbnail src="..." width="100" height="100" style="margin:10px"
+                td 
+                  img.img-thumbnail src="..." width="100" height="100" style="margin:10px"
+                td
+                  img.img-thumbnail src="..." width="100" height="100" style="margin:10px"
+                td 
+                  img.img-thumbnail src="..." width="100" height="100" style="margin:10px"
+                td 
+                  img.img-thumbnail src="..." width="100" height="100" style="margin:10px"
+    
+    
+    div style="margin:10px 0px"
+      img src="..." width="640" height="360"
 
-        br 
-        .panel.panel-default
-          .panel-body
-            p
-              strong 高松 太郎
-              |&nbsp 3ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.
+    .row
+      div style="margin:30px 0px"
+        .col-xs-2
+          button.btn.btn-success.btn-lg ダウンロード
+        .col-xs-3
+          h4
+            | 100,000回のダウンロード
+            br スマートフォン用
 
-        .panel.panel-default
-          .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        .panel.panel-default
-          .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        .panel.panel-default
-          .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        .panel.panel-default
-          .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        .panel.panel-default
-          .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        .panel.panel-default
-          .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        .panel.panel-default
-          .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        .panel.panel-default
-           .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        .panel.panel-default
-          .panel-body
-            p
-              strong 香川 一郎
-              |&nbsp 5ヶ月前
-            p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-
-        ul.pagination
-          li.disabled
-            a href="" &laquo;
-          li.active
-            a href="" 
-              span 1
-              span.sr-only (current)
-          li
-            a href="" 2
-          li 
-            a href="" 3
-          li
-            a href="" 4
-          li
-            a href="" 5
-          li
-            a href="" 6
-          li
-            a href="" 7
-          li
-            a href="" 8
-          li
-            a href="" 9
-          li
-            a href="" 10
-          li
-            a href="" &raquo;
-     
-      .col-xs-1
+    div style="margin:10px 0px"
+      .panel.panel-default
+        .pnanel-body
+          h3.h3 コメント
+          .row
+            .col-xs-1
+            .col-xs-10
+              form.form-group
+                label.contorl-label 名前
+                input.form-control type="text" placeholder="名前を入力してください。"
+                br
+                label.control-label コメント
+                textarea.form-control rows="5" placeholder="コメントを入力してください。"
+                br
+                  div style="text-align:right"
+                    button.btn.btn-primary 投稿
+      
+              br 
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 高松 太郎
+                    |&nbsp 3ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.
+      
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              .panel.panel-default
+                 .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              .panel.panel-default
+                .panel-body
+                  p
+                    strong 香川 一郎
+                    |&nbsp 5ヶ月前
+                  p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
+      
+              ul.pagination
+                li.disabled
+                  a href="" &laquo;
+                li.active
+                  a href="" 
+                    span 1
+                    span.sr-only (current)
+                li
+                  a href="" 2
+                li 
+                  a href="" 3
+                li
+                  a href="" 4
+                li
+                  a href="" 5
+                li
+                  a href="" 6
+                li
+                  a href="" 7
+                li
+                  a href="" 8
+                li
+                  a href="" 9
+                li
+                  a href="" 10
+                li
+                  a href="" &raquo;
+           
+            .col-xs-1
+  .col-xs-1
