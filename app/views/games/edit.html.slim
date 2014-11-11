@@ -1,102 +1,106 @@
-h1 ゲーム情報の編集
+.row
+  .col-xs-2
+  .col-xs-8
+    h1 ゲーム情報の編集
+    
+    form
+      .form-group
+         .row
+           .col-xs-4 style="text-align:right"
+             label.control-label
+               |アップロードするゲーム
+           .col-xs-8
+               input type="file"
+    
+      .form-group
+         .row
+           .col-xs-4 style="text-align:right"
+             label.control-label プラットフォーム
+           .col-xs-8
+             select.form-control
+               option プラットフォームを選択
+               option オンライン
+               option パソコン
+               option スマートフォン
+    
+     
+      .form-group
+        .row
+          .col-xs-4 style="text-align:right"
+            label.control-label タイトル
+          .col-xs-8
+              input.form-control type="text" placeholder="ゲームのタイトル"
+       
+      .form-group
+        .row
+          .col-xs-4 style="text-align:right"
+            label.control-label バージョン
+          .col-xs-8
+            input.form-control type="text" placeholder="(例) 1.1.2"
+      
+    
+      .form-group
+        .row
+          .col-xs-4 style="text-align:right"
+            label.control-label アイコン画像
+          .col-xs-8
+            input type="file"
+    
+      .form-group
+        .row
+          .col-xs-4 style="text-align:right"
+            label.control-label 作成したグループ
+          .col-xs-8
+            select.form-control
+              option グループを選択
+              option Group A
+              option Group C
+              option Group F
+              option Group G
+     
+      div style="margin:40px 0px"
+        .form-group
+          .row
+            .col-xs-4 style="text-align:right"
+              label.control-label タグ1
+            .col-xs-8
+              input.form-control type="text" placeholder="タグ名"
+        .row
+          .col-xs-4 style="text-align:right"
+            button.btn.btn-default.btn-sm
+              span.glyphicon.glyphicon-plus
+              |&nbspフォームを追加
+      
+      
+      .form-group
+        .row
+          .col-xs-4 style="text-align:right"
+            label.control-control 説明文
+          .col-xs-8
+            textarea.form-control rows="7" placeholder="マークダウン記法で書いてください。"
+      
+      div style="margin:40px 0px"
+        .form-group
+          .row
+            .col-xs-4 style="text-align:right"
+              label.control-label キャプチャ画像1
+            .col-xs-8
+              input.h5 type="file"
+        .row
+          .col-xs-4 style="text-align:right"
+            button.btn.btn-default.btn-sm
+              span.glyphicon.glyphicon-plus
+              |&nbsp フォームを追加
+      
+      
+      .form-group
+        .row
+          .col-xs-4 style="text-align:right"
+            label.control-label 動画
+          .col-xs-8
+            input.h5 type="file"
+      
+      div style="text-align:right"
+        = link_to("アップロード", game_path(1), method: :get, class:"btn btn-primary")
 
-
-form
-  .form-group
-     .row
-       .col-xs-4 style="text-align:right"
-         label.control-label
-           |アップロードするゲーム
-       .col-xs-8
-           input type="file"
-
-  .form-group
-     .row
-       .col-xs-4 style="text-align:right"
-         label.control-label プラットフォーム
-       .col-xs-8
-         select.form-control
-           option プラットフォームを選択
-           option オンライン
-           option パソコン
-           option スマートフォン
-
- 
-  .form-group
-    .row
-      .col-xs-4 style="text-align:right"
-        label.control-label タイトル
-      .col-xs-8
-          input.form-control type="text" placeholder="ゲームのタイトル"
-   
-  .form-group
-    .row
-      .col-xs-4 style="text-align:right"
-        label.control-label バージョン
-      .col-xs-8
-        input.form-control type="text" placeholder="(例) 1.1.2"
-  
-
-  .form-group
-    .row
-      .col-xs-4 style="text-align:right"
-        label.control-label アイコン画像
-      .col-xs-8
-        input type="file"
-
-  .form-group
-    .row
-      .col-xs-4 style="text-align:right"
-        label.control-label 作成したグループ
-      .col-xs-8
-        select.form-control
-          option グループを選択
-          option Group A
-          option Group C
-          option Group F
-          option Group G
-  
-  .form-group
-    .row
-      .col-xs-4 style="text-align:right"
-        label.control-label タグ1
-      .col-xs-8
-        input.form-control type="text" placeholder="タグ名"
-  .row
-    .col-xs-4 style="text-align:right"
-      button.btn.btn-default
-        span.glyphicon.glyphicon-plus
-        |&nbspフォームを追加
-  
-  
-  .form-group
-    .row
-      .col-xs-4 style="text-align:right"
-        label.control-control 説明文
-      .col-xs-8
-        textarea.form-control rows="7" placeholder="マークダウン記法で書いてください。"
-  
-  
-  .form-group
-    .row
-      .col-xs-4 style="text-align:right"
-        label.control-label キャプチャ画像1
-      .col-xs-8
-        input.h5 type="file"
-  .row
-    .col-xs-4 style="text-align:right"
-      button.btn.btn-default
-        span.glyphicon.glyphicon-plus
-        |&nbsp フォームを追加
-  
-  
-  .form-group
-    .row
-      .col-xs-4 style="text-align:right"
-        label.control-label 動画
-      .col-xs-8
-        input.h5 type="file"
-  
-  div style="text-align:right"
-    = link_to("アップロード", game_path(1), method: :get, class:"btn btn-primary")
-
+  .col-xs-2
