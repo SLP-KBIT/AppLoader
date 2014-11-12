@@ -1,4 +1,3 @@
-
 .row
   .col-sm-2
   .col-sm-8
@@ -6,11 +5,17 @@
       .col-sm-8
         h1 ゲーム一覧 A 件 中 10 件
       .col-sm-4
-        br
         .dropdown align="right"
           button.btn.btn-default.dropdown-toggle type="button" id="DropdownMenu1" data-toggle="dropdown"
             | 並び替え
             span.caret
+          ul.dropdown-menu role="menu" aria-labelledby="dropdownSort"
+            li role="presentation"
+              a role="menuitem" tabindex="-1" href="#"
+              | 新着順
+            li role="presentation"
+              a role="menuitem" tabindex="-1" href="#"
+              | DL順
     table.table
       thead
       tbody
