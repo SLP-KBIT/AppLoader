@@ -11,9 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141112152744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: true do |t|
+    t.string   "title",                  null: false
+    t.string   "icon",                   null: false
+    t.integer  "group_id",               null: false
+    t.text     "summary",                null: false
+    t.string   "version",                null: false
+    t.string   "game_file",              null: false
+    t.integer  "dl_count",   default: 0, null: false
+    t.string   "movie"
+    t.string   "format",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.string   "name",       null: false
+    t.text     "summary",    null: false
+    t.string   "icon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
