@@ -1,0 +1,14 @@
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.string :account
+      t.string :name
+      t.string :password_digest
+      t.boolean :enable_flag
+      t.boolean :admin_flag
+      t.string :icon
+
+      t.timestamps
+    end
+  end
+end

@@ -1,19 +1,16 @@
 # == Schema Information
 #
-# Table name: groups
+# Table name: tags
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)      not null
-#  summary    :text             not null
-#  icon       :string(255)
+#  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 FactoryGirl.define do
-  factory :group do
+  factory :tag do
     name "MyString"
-summary "MyText"
   end
 
 end
