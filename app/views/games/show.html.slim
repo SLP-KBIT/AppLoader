@@ -1,13 +1,14 @@
 .row
   .col-xs-1
   .col-xs-10
-    .alert.alert-warning
-      .row
-        .col-xs-9
-          p.h5 あなたが所属するグループが作成したゲームです。
-        .col-xs-3
-          div style="text-align:right"
-            = link_to("編集", edit_game_path(1), method: :get, class:"btn btn-warning")
+    .alert.alert-warning role="alert" align="center"
+      table border="0"
+        tbody
+          tr 
+            td
+              p.h4 あなたが所属するグループが作成したゲームです。
+            td
+              = link_to("編集", edit_game_path(1), method: :get, class:"btn btn-warning")
     
     .row
       div style="margin:10px 0px"
@@ -179,31 +180,31 @@
                     strong 香川 一郎
                     |&nbsp 5ヶ月前
                   p ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text.ダミーテキスト。Dummy Text
-      
-              ul.pagination
-                li.disabled
-                  a href="" &laquo;
-                li.active
-                  a href="" 
-                    span 1
-                    span.sr-only (current)
-                li
-                  a href="" 2
-                li 
-                  a href="" 3
-                li
-                  a href="" 4
-                li
-                  a href="" 5
-                li
-                  a href="" 6
-                li
-                  a href="" 7
-                li
-                  a href="" 8
-                li
-                  a href="" 9
-                li
-                  a href="" 10
-                li
-                  a href="" &raquo;
+              div align="center"
+                ul.pagination
+                  li.disabled
+                    a href="" &laquo;
+                  li.active
+                    a href="" 
+                      span 1
+                      span.sr-only (current)
+                  li
+                    a href="" 2
+                  li 
+                    a href="" 3
+                  li
+                    a href="" 4
+                  li
+                    a href="" 5
+                  li
+                    a href="" 6
+                  li
+                    a href="" 7
+                  li
+                    a href="" 8
+                  li
+                    a href="" 9
+                  li
+                    a href="" 10
+                  li
+                    a href="" &raquo;
