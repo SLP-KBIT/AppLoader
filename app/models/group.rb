@@ -12,5 +12,5 @@
 
 class Group < ActiveRecord::Base
   has_many :games
-  has_many :users_groups
+  has_and_belongs_to_many :users
 end

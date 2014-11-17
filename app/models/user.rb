@@ -14,5 +14,5 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :users_groups
+  has_and_belongs_to_many :groups
 end
