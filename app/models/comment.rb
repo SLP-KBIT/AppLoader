@@ -11,5 +11,5 @@
 #
 
 class Comment < ActiveRecord::Base
-  belong_to :game 
+  belongs_to :game
 end
