@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112152744) do
+ActiveRecord::Schema.define(version: 20141117062451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.integer  "game_id",     null: false
+    t.text     "comment",     null: false
+    t.string   "contributor", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "games", force: true do |t|
     t.string   "title",                  null: false
@@ -30,9 +38,43 @@ ActiveRecord::Schema.define(version: 20141112152744) do
     t.datetime "updated_at"
   end
 
+  create_table "games_tags", force: true do |t|
+    t.integer "game_id"
+    t.integer "tag_id"
+  end
+
   create_table "groups", force: true do |t|
     t.string   "name",       null: false
     t.text     "summary",    null: false
+    t.string   "icon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups_users", force: true do |t|
+    t.integer "user_id"
+    t.integer "group_id"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.integer  "game_id",    null: false
+    t.string   "picture",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "account",                         null: false
+    t.string   "name",                            null: false
+    t.string   "password_digest",                 null: false
+    t.boolean  "enable_flag",     default: true,  null: false
+    t.boolean  "admin_flag",      default: false, null: false
     t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"

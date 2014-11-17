@@ -18,4 +18,7 @@
 
 class Game < ActiveRecord::Base
   belongs_to :group
+  has_many :picture
+  has_many :comments
+  has_and_belongs_to_many :tags
 end
