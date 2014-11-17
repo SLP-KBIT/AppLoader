@@ -10,4 +10,6 @@
 #
 
 class GamesTags < ActiveRecord::Base
+  belong_to :game
+  belong_to :tag
 end
