@@ -11,56 +11,22 @@ h1 AppLoader
                 h3 DLトップ
                 a href="../games/" もっと見る
           tbody
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 1. 踊るクソネミの舞
-                    br
-                    | DL: 136
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 2. くそねみ症候群
-                    br
-                    | DL: 112
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 3. 眠り姫
-                    br
-                    | DL: 98
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 4. 単位くれ
-                    br
-                    | DL: 76
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 5. 超クソネミ型巨人
-                    br
-                    | DL: 45
+            / 部分実装
+              トップ5を表示(マクロの使い方忘れた)
+              表示前にDL数でソートする必要あり
+              順位表示を実装してない
+            - @games.first(5).each do |game|
+              tr
+                td
+                  .row
+                    .col-sm-3
+                      img alt="ねるるん" src="/assets/neru.png" width=50 height=50
+                    .col-sm-9
+                      b
+                        = link_to(game.title, game_path(game.id))
+                      br
+                        = game.dl_count
+                        | &nbsp ダウンロード
             tr align="right"
               td
                 b
