@@ -13,7 +13,9 @@ h1 AppLoader
           tbody
             / 部分実装
               トップ5を表示(マクロの使い方忘れた)
-            - @games.order("dl_count").first(5).each_with_index do |game, count|
+            / - @games.order("dl_count").first(5).each_with_index do |game, count|
+ 
+            - @dl_games.each_with_index do |game, count|
               tr
                 td
                   .row
@@ -40,7 +42,7 @@ h1 AppLoader
             h1 新着 &nbsp; &nbsp;
             a href="../games/" もっと見る
       tbody
-        - @games.order("created_at").first(10).each_with_index do |game, count|
+        - @new_games.each_with_index do |game, count|
           - if count.even?
             tr
               .row
