@@ -11,56 +11,20 @@ h1 AppLoader
                 h3 DLトップ
                 a href="../games/" もっと見る
           tbody
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 1. 踊るクソネミの舞
-                    br
-                    | DL: 136
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 2. くそねみ症候群
-                    br
-                    | DL: 112
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 3. 眠り姫
-                    br
-                    | DL: 98
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 4. 単位くれ
-                    br
-                    | DL: 76
-            tr
-              td
-                .row
-                  .col-sm-3
-                    img alt="ねるるん" src="/assets/neru.png" width=50 height=50
-                  .col-sm-9
-                    b
-                      a href="#" 5. 超クソネミ型巨人
-                    br
-                    | DL: 45
+            - @dl_games.each_with_index do |game, count|
+              tr
+                td
+                  .row
+                    .col-sm-3
+                      img alt="アイコン" src="@games.icon" width=50 height=50
+                    .col-sm-9
+                      b
+                        = count + 1
+                        | .&nbsp
+                        = link_to(game.title, game_path(game.id))
+                      br
+                      = game.dl_count
+                      | &nbsp ダウンロード
             tr align="right"
               td
                 b
@@ -74,122 +38,20 @@ h1 AppLoader
             h1 新着 &nbsp; &nbsp;
             a href="../games/" もっと見る
       tbody
-        tr
-          .row
-            td.col-xs-6
+        - @new_games.each_with_index do |game, count|
+          - if count.even?
+            tr
               .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" 眠れるラボのなおすけ
-                  br
-                  | ラボでなおすけが寝ている間にSNSを乗っ取っちゃおう
-                  br
-                  | 起こさずに140字打ち切れるかな?
-            td.col-xs-6
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" widt=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" バック・トゥ・ザ・ｵﾌﾄｩﾝ
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
-        tr
-            td
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" クソネミの化身
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
-            td
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" クソネミマン
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
-        tr
-            td
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" 授業中のクソネミ
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
-            td
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" ぶち込めクソネミタンク
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
-        tr
-            td
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" クソネミスイッチ
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
-            td
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" クソネミラッシュ
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
-        tr
-            td
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" クソネミほー
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
-            td
-              .row
-                .col-xs-3
-                  img alt="ねるるん" src="/assets/neru.png" width=100 height=100
-                .col-xs-9
-                  h4
-                    a href="#" 徹夜明けでクソ眠い
-                  br
-                  | ここに説明が入ります
-                  br
-                  | ここに説明が入ります
+
+          td.col-xs-6
+            .row
+              .col-xs-3
+                img alt="アイコン" src="@games.icon" width=100 height=100
+              .col-xs-9
+                h4
+                  = link_to(game.title, game_path(game.id))
+                br
+                = game.summary
         tr align="right"
             td colspan="2"
               b

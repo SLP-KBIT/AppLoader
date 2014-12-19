@@ -21,4 +21,8 @@ class Game < ActiveRecord::Base
   has_many :picture
   has_many :comments
   has_and_belongs_to_many :tags
+  DL_TOP = 5
+  NEW_TOP = 10
+  scope :dl_top, -> {order("dl_count desc").first(DL_TOP)}
+  scope :new_top, -> {order("updated_at desc").first(NEW_TOP)}
 end
