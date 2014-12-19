@@ -11,16 +11,12 @@ h1 AppLoader
                 h3 DLトップ
                 a href="../games/" もっと見る
           tbody
-            / 部分実装
-              トップ5を表示(マクロの使い方忘れた)
-            / - @games.order("dl_count").first(5).each_with_index do |game, count|
- 
             - @dl_games.each_with_index do |game, count|
               tr
                 td
                   .row
                     .col-sm-3
-                      img alt="ねるるん" src="/assets/neru.png" width=50 height=50
+                      img alt="アイコン" src="@games.icon" width=50 height=50
                     .col-sm-9
                       b
                         = count + 1
@@ -50,7 +46,7 @@ h1 AppLoader
           td.col-xs-6
             .row
               .col-xs-3
-                img alt="ねるるん" src="/assets/neru.png" width=100 height=100
+                img alt="アイコン" src="@games.icon" width=100 height=100
               .col-xs-9
                 h4
                   = link_to(game.title, game_path(game.id))
