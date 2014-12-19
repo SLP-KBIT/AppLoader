@@ -13,7 +13,6 @@ h1 AppLoader
           tbody
             / 部分実装
               トップ5を表示(マクロの使い方忘れた)
-              順位表示を実装してない
             - @games.order("dl_count").first(5).each_with_index do |game, count|
               tr
                 td
