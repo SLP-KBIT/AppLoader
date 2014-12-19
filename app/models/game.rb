@@ -23,6 +23,6 @@ class Game < ActiveRecord::Base
   has_and_belongs_to_many :tags
   DL_TOP = 5
   NEW_TOP = 10
-  scope :dl_top, -> {order("dl_count").first(DL_TOP)}
-  scope :new_top, -> {order("created_at").first(NEW_TOP)}
+  scope :dl_top, -> {order("dl_count desc").first(DL_TOP)}
+  scope :new_top, -> {order("created_at desc").first(NEW_TOP)}
 end
