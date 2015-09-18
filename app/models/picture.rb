@@ -10,5 +10,5 @@
 #
 
 class Picture < ActiveRecord::Base
-  belong_to :game
+  belongs_to :game
 end
