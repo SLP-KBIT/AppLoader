@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141117062451) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.integer  "game_id",     null: false
     t.text     "comment",     null: false
     t.string   "contributor", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20141117062451) do
     t.datetime "updated_at"
   end
 
-  create_table "games", force: true do |t|
+  create_table "games", force: :cascade do |t|
     t.string   "title",                  null: false
     t.string   "icon",                   null: false
     t.integer  "group_id",               null: false
@@ -38,12 +38,12 @@ ActiveRecord::Schema.define(version: 20141117062451) do
     t.datetime "updated_at"
   end
 
-  create_table "games_tags", force: true do |t|
+  create_table "games_tags", force: :cascade do |t|
     t.integer "game_id"
     t.integer "tag_id"
   end
 
-  create_table "groups", force: true do |t|
+  create_table "groups", force: :cascade do |t|
     t.string   "name",       null: false
     t.text     "summary",    null: false
     t.string   "icon"
@@ -51,25 +51,25 @@ ActiveRecord::Schema.define(version: 20141117062451) do
     t.datetime "updated_at"
   end
 
-  create_table "groups_users", force: true do |t|
+  create_table "groups_users", force: :cascade do |t|
     t.integer "user_id"
     t.integer "group_id"
   end
 
-  create_table "pictures", force: true do |t|
+  create_table "pictures", force: :cascade do |t|
     t.integer  "game_id",    null: false
     t.string   "picture",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "account",                         null: false
     t.string   "name",                            null: false
     t.string   "password_digest",                 null: false
