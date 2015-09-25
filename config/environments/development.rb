@@ -37,4 +37,12 @@ Rails.application.configure do
 
   BetterErrors.use_pry!
   BetterErrors::Middleware.allow_ip! "133.92.0.0/16"
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    Bullet.rails_logger = true
+  end
 end
