@@ -19,8 +19,12 @@
 require 'rails_helper'
 
 RSpec.describe Game, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-  it "is valid with a title, icon, group_id, summary, version, game_file, dl_count, format"
+  it "is valid with a title, icon, group_id, summary, version, game_file, dl_count, format" do
+    group = Group.create(name: "group1", summary: "hoge")
+    game = group.games.build(title: "Title1", icon: "icon.png", summary: "hoge", version: "1.0", game_file: "game1.exe", format: "DOWNLOAD")
+    expect(game).to be_valid
+  end
+
   it "is invalid without a title" do
     game = Game.new(title: nil)
     game.valid?
