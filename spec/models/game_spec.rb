@@ -88,4 +88,24 @@ RSpec.describe Game, :type => :model do
     game.valid?
     expect(game.errors[:group_id]).to include("is not included in the list")
   end
+
+  it "returns #{Game::DL_TOP} games sorted by dl_count " do
+    games = []
+    group = Group.create(name: 'Group1', summary: 'hoge')
+    Game::DL_TOP.times do |i|
+      game = group.games.create(title: "TestGame#{i}", summary: 'hoge', icon: 'hoge', version: '1.0', game_file: "file#{i}.exe", format: 'download', dl_count: Game::DL_TOP-i+1)
+      games.push(game)
+    end
+    expect(Game.dl_top).to eq games
+  end
+
+  it "returns #{Game::NEW_TOP} games sotred by update_date" do
+    games = []
+    group = Group.create(name: 'Group1', summary: 'hoge')
+    Game::NEW_TOP.times do |i|
+      game = group.games.create(title: "TestGame#{i}", summary: 'hoge', icon: 'hoge', version: '1.0', game_file: "file#{i}.exe", format: 'download')
+      games.push(game)
+    end
+    expect(Game.new_top).to eq games.reverse
+  end
 end

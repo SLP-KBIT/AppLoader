@@ -28,6 +28,7 @@ class Game < ActiveRecord::Base
 
   DL_TOP = 5
   NEW_TOP = 10
-  scope :dl_top, -> {order("dl_count desc").first(DL_TOP)}
-  scope :new_top, -> {order("updated_at desc").first(NEW_TOP)}
+
+  scope :dl_top, -> (num = DL_TOP) {order("dl_count desc").first(num)}
+  scope :new_top, -> (num = NEW_TOP) {order("updated_at desc").first(num)}
 end
