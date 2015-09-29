@@ -19,74 +19,96 @@
 require 'rails_helper'
 
 RSpec.describe Game, :type => :model do
-  it "is valid with a title, icon, group_id, summary, version, game_file, dl_count, format" do
-    group = Group.create(name: "group1", summary: "hoge")
-    game = group.games.build(title: "Title1", icon: "icon.png", summary: "hoge", version: "1.0", game_file: "game1.exe", format: "DOWNLOAD")
-    expect(game).to be_valid
+  let(:group) { Group.create(name: "group1", summary: "hoge") }
+  let(:game) { group.games.build(title: "Title1", icon: "icon.png", summary: "hoge", version: "1.0", game_file: "game1.exe", format: "DOWNLOAD") }
+
+  describe "is valid" do
+    context "when has a title, icon, group_id, summary, version, game_file, dl_count and format" do
+      it { expect(game).to be_valid }
+    end
   end
 
-  it "is invalid without a title" do
-    game = Game.new(title: nil)
-    game.valid?
-    expect(game.errors[:title]).to include("can't be blank")
-  end
+  describe "is invalid" do
+    context "when doesn't has a title" do
+      it do
+        game.title = nil
+        game.valid?
+        expect(game.errors[:title]).to include("can't be blank")
+      end
+    end
 
-  it "is invalid without a icon" do
-    game = Game.new(icon: nil)
-    game.valid?
-    expect(game.errors[:icon]).to include("can't be blank")
-  end
+    context "when doesn't has a icon" do
+      it do
+        game.icon = nil
+        game.valid?
+        expect(game.errors[:icon]).to include("can't be blank")
+      end
+    end
 
-  it "is invalid without a group_id" do
-    game = Game.new(group_id: nil)
-    game.valid?
-    expect(game.errors[:group_id]).to include("can't be blank")
-  end
+    context "when doesn't has a group_id" do
+      it  do
+        game.group_id = nil
+        game.valid?
+        expect(game.errors[:group_id]).to include("can't be blank")
+      end
+    end
 
-  it "is invalid without a summary" do
-    game = Game.new(summary: nil)
-    game.valid?
-    expect(game.errors[:summary]).to include("can't be blank")
-  end
+    context "when doesn't has a summary" do
+      it  do
+        game.summary = nil
+        game.valid?
+        expect(game.errors[:summary]).to include("can't be blank")
+      end
+    end
 
-  it "is invalid without a version" do
-    game = Game.new(version: nil)
-    game.valid?
-    expect(game.errors[:version]).to include("can't be blank")
-  end
+    context "when doesn't has a version" do
+      it  do
+        game.version = nil
+        game.valid?
+        expect(game.errors[:version]).to include("can't be blank")
+      end
+    end
 
-  it "is invalid without a game_file" do
-    game = Game.new(game_file: nil)
-    game.valid?
-    expect(game.errors[:game_file]).to include("can't be blank")
-  end
+    context "when doesn't has a game_file" do
+      it  do
+        game.game_file = nil
+        game.valid?
+        expect(game.errors[:game_file]).to include("can't be blank")
+      end
+    end
 
-  it "is invalid without a dl_count" do
-    game = Game.new(dl_count: nil)
-    game.valid?
-    expect(game.errors[:dl_count]).to include("can't be blank")
-  end
+    context "when doesn't has a dl_count" do
+      it "is invalid without a dl_count" do
+        game.dl_count = nil
+        game.valid?
+        expect(game.errors[:dl_count]).to include("can't be blank")
+      end
+    end
 
-  it "is invalid without a format" do
-    game = Game.new(format: nil)
-    game.valid?
-    expect(game.errors[:format]).to include("can't be blank")
-  end
+    context "when doesn't has a format" do
+      it do
+        game.format = nil
+        game.valid?
+        expect(game.errors[:format]).to include("can't be blank")
+      end
+    end
 
-  it "does not allow duplicate title" do
-    group = Group.create(name: 'Group1', summary: 'hoge')
-    game1 = group.games.create(title: 'TestGame', summary: 'hoge', icon: 'hoge', version: '1.0', game_file: 'file1.exe', format: 'download')
-    game1.valid?
-    expect(game1.errors).to be_blank
-    game2 = group.games.build(title: 'TestGame')
-    game2.valid?
-    expect(game2.errors[:title]).to include("has already been taken")
-  end
+    context "when has a duplicate title" do
+      it  do
+        game.save
+        duplicate_game = group.games.build(title: "Title1")
+        duplicate_game.valid?
+        expect(duplicate_game.errors[:title]).to include("has already been taken")
+      end
+    end
 
-  it "is invalid without a included group_id in Group" do
-    game = Game.new(group_id: nil)
-    game.valid?
-    expect(game.errors[:group_id]).to include("is not included in the list")
+    context "when group_id doesn't included in Group" do
+      it do
+        game = Game.new(group_id: nil)
+        game.valid?
+        expect(game.errors[:group_id]).to include("is not included in the list")
+      end
+    end
   end
 
   it "returns #{Game::DL_TOP} games sorted by dl_count " do
