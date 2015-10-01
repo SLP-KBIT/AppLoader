@@ -18,10 +18,10 @@
 
 require 'rails_helper'
 
-RSpec.describe Game, :type => :model do
+RSpec.describe Game, type: :model do
   let(:group) { create(:group) }
 
-  context 'when has a title, icon, group_id, summary, version, game_file, dl_count and format' do
+  context 'when has necessary parameters' do
     let(:game) { build(:game) }
     it { expect(game).to be_valid }
   end
@@ -92,7 +92,7 @@ RSpec.describe Game, :type => :model do
 
   context 'when has a duplicate title' do
     let(:game) { create(:game) }
-    it  do
+    it do
       duplicate_game = Game.new(title: game.title)
       duplicate_game.valid?
       expect(duplicate_game.errors[:title]).to include('has already been taken')
@@ -111,7 +111,13 @@ RSpec.describe Game, :type => :model do
     games = []
     group = Group.create(name: 'Group1', summary: 'hoge')
     Game::DL_TOP.times do |i|
-      game = group.games.create(title: "TestGame#{i}", summary: 'hoge', icon: 'hoge', version: '1.0', game_file: "file#{i}.exe", format: 'download', dl_count: Game::DL_TOP-i+1)
+      game = group.games.create(title: "TestGame#{i}",
+                                summary: 'hoge',
+                                icon: 'hoge',
+                                version: '1.0',
+                                game_file: "file#{i}.exe",
+                                format: 'download',
+                                dl_count: Game::DL_TOP - i + 1)
       games.push(game)
     end
     expect(Game.dl_top).to eq games

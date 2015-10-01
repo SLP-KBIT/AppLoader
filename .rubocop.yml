@@ -1,0 +1,47 @@
+AllCops:
+  Exclude:
+    - "vendor/**/*"
+    - db/schema.rb
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# 日本語のコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# コメントのない public classを許可
+Style/Documentation:
+  Enabled: false
+
+# if 文の中に 3 行程度のブロックを書くぐらいは許容した方が現実的
+Style/GuardClause:
+  MinBodyLength: 5
+
+##################### Metrics ##################################
+
+# 30 まではギリギリ許せる範囲だった
+Metrics/AbcSize:
+  Max: 30
+
+# 6 は強すぎるので緩める
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+# * 警告 120文字
+# * 禁止 160文字
+# のイメージ
+Metrics/LineLength:
+  Max: 160
+  Exclude:
+    - "db/migrate/*.rb"
+
+# 20 行超えるのは migration ファイル以外滅多に無い
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - "db/migrate/*.rb"
+
+# 分岐の数。ガード句を多用しているとデフォルト 7 だと厳しい
+Metrics/PerceivedComplexity:
+   Max: 8

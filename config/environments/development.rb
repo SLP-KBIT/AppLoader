@@ -36,7 +36,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   BetterErrors.use_pry!
-  BetterErrors::Middleware.allow_ip! "133.92.0.0/16"
+  BetterErrors::Middleware.allow_ip! '133.92.0.0/16'
 
   config.after_initialize do
     Bullet.enable = true
