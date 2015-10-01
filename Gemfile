@@ -46,6 +46,7 @@ group :development do
   gem 'pre-commit'
   gem 'guard-rspec', require: false
   gem 'bullet'
+  gem 'rubocop'
 end
 
 group :development, :test do
