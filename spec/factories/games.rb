@@ -18,15 +18,13 @@
 
 FactoryGirl.define do
   factory :game do
-    title "MyString"
-icon "MyString"
-group_id 1
-summary "MyText"
-version "MyString"
-game_file "MyString"
-dl_count 1
-movie "MyString"
-format "MyString"
+    title 'Title1'
+    icon 'sample.png'
+    summary 'hoge'
+    version '1.0'
+    game_file 'dammy.exe'
+    dl_count 0
+    format 'DOWNLOAD'
+    association :group
   end
-
 end

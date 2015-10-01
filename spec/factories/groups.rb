@@ -12,8 +12,7 @@
 
 FactoryGirl.define do
   factory :group do
-    name "MyString"
-summary "MyText"
+    name 'Group1'
+    summary 'hoge'
   end
-
 end
