@@ -18,9 +18,10 @@
 
 class Game < ActiveRecord::Base
   belongs_to :group
-  has_many :picture
+  has_many :pictures
   has_many :comments
-  has_and_belongs_to_many :tags
+  has_many :taggings
+  has_many :tags, through: :taggings
 
   validates :title, uniqueness: true, presence: true
   validates :icon, :summary, :version, :game_file, :dl_count, :format, presence: true
