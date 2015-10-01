@@ -12,7 +12,6 @@
 FactoryGirl.define do
   factory :picture do
     game_id 1
-picture "MyString"
+    picture 'MyString'
   end
-
 end

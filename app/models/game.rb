@@ -24,11 +24,11 @@ class Game < ActiveRecord::Base
 
   validates :title, uniqueness: true, presence: true
   validates :icon, :summary, :version, :game_file, :dl_count, :format, presence: true
-  validates :group_id, inclusion: { in: proc{Group.pluck(:id)} }, presence: true
+  validates :group_id, inclusion: { in: proc { Group.pluck(:id) } }, presence: true
 
   DL_TOP = 5
   NEW_TOP = 10
 
-  scope :dl_top, -> (num = DL_TOP) {order("dl_count desc").first(num)}
-  scope :new_top, -> (num = NEW_TOP) {order("updated_at desc").first(num)}
+  scope :dl_top, -> (num = DL_TOP) { order('dl_count desc').first(num) }
+  scope :new_top, -> (num = NEW_TOP) { order('updated_at desc').first(num) }
 end

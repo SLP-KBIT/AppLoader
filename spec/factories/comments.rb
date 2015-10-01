@@ -13,8 +13,7 @@
 FactoryGirl.define do
   factory :comment do
     game_id 1
-comment "MyText"
-contributor "MyString"
+    comment 'MyText'
+    contributor 'MyString'
   end
-
 end
