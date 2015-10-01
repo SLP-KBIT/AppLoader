@@ -1,0 +1,27 @@
+.panel.panel-default.dl-top#dlTop
+  .panel-body
+    table.table
+      thead
+        tr
+          th
+            h3 DLトップ
+            = link_to("もっと見る", games_path)
+      tbody
+        - @dl_games.each_with_index do |game, count|
+          tr
+            td
+              .row
+                .col-sm-3
+                  img alt="アイコン" src="/assets/#{game.icon}" width=50 height=50
+                .col-sm-9
+                  b
+                    = count + 1
+                    | .&nbsp
+                    = link_to(game.title, game_path(game.id))
+                  br
+                  = game.dl_count
+                  | &nbsp ダウンロード
+        tr align="right"
+          td
+            b
+              = link_to("もっと見る", games_path)
