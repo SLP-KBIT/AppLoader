@@ -11,16 +11,15 @@
           tr
             td
               .row
-                .col-sm-3
-                  img alt="アイコン" src="/assets/#{game.icon}" width=50 height=50
-                .col-sm-9
-                  b
-                    = count + 1
-                    | .&nbsp
-                    = link_to(game.title, game_path(game.id))
-                  br
-                  = game.dl_count
-                  | &nbsp ダウンロード
+                img[alt="アイコン" src="/assets/#{game.icon}" width=50 height=50 align="left"]
+                b
+                  = count + 1
+                  | .&nbsp
+                  = link_to(game.title, game_path(game.id))
+                br
+                = game.dl_count
+                | &nbsp ダウンロード
+                br[clear="all"]
         tr align="right"
           td
             b
