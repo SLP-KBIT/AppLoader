@@ -27,4 +27,24 @@ FactoryGirl.define do
     format 'DOWNLOAD'
     association :group
   end
+
+  sequence :title do |n|
+    "Title#{n}"
+  end
+
+  sequence :updated_at do |n|
+    n.days.ago
+  end
+
+  factory :games, class: Game do
+    title
+    icon 'sample.png'
+    summary 'hoge'
+    version '1.0'
+    game_file 'dammy.exe'
+    dl_count { rand(1..100) }
+    format 'DOWNLOAD'
+    association :group
+    updated_at
+  end
 end
