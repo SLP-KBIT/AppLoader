@@ -127,7 +127,12 @@ RSpec.describe Game, type: :model do
     games = []
     group = Group.create(name: 'Group1', summary: 'hoge')
     Game::NEW_TOP.times do |i|
-      game = group.games.create(title: "TestGame#{i}", summary: 'hoge', icon: 'hoge', version: '1.0', game_file: "file#{i}.exe", format: 'download')
+      game = group.games.create(title: "TestGame#{i}",
+                                summary: 'hoge',
+                                icon: 'hoge',
+                                version: '1.0',
+                                game_file: "file#{i}.exe",
+                                format: 'download')
       games.push(game)
     end
     expect(Game.new_top).to eq games.reverse
