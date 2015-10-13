@@ -14,5 +14,6 @@ FactoryGirl.define do
   factory :group do
     name 'Group1'
     summary 'hoge'
+    icon 'hoge.png'
   end
 end
