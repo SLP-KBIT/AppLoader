@@ -16,4 +16,6 @@
 class User < ActiveRecord::Base
   has_many :belongings
   has_many :groups, through: :belongings
+
+  validates :name, :password_digest, :enable_flag, :admin_flag, presence: true
 end
