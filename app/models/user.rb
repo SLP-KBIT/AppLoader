@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_many :groups, through: :belongings
 
   validates :account, presence: true, uniquness: true,
-                      format: { with: /^[0-9a-zA-Z]+$/ }
+                      format: { with: /\A[0-9a-zA-Z]+\Z/i }
   validates :icon,    presence: true,
-                      format: { with: /^[0-9a-zA-Z]+$/ }
+                      format: { with: /\A[0-9a-zA-Z]+\Z/i }
 end
