@@ -19,6 +19,6 @@ class User < ActiveRecord::Base
 
   validates :account, presence: true, uniquness: true,
                       format: { with: /^[0-9a-zA-Z]+$/ }
-  validates :account, presence: true, 
+  validates :icon,    presence: true,
                       format: { with: /^[0-9a-zA-Z]+$/ }
 end
