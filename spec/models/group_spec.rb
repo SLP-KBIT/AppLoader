@@ -3,9 +3,9 @@
 # Table name: groups
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)      not null
+#  name       :string           not null
 #  summary    :text             not null
-#  icon       :string(255)
+#  icon       :string
 #  created_at :datetime
 #  updated_at :datetime
 #
