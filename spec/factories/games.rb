@@ -3,15 +3,15 @@
 # Table name: games
 #
 #  id         :integer          not null, primary key
-#  title      :string(255)      not null
-#  icon       :string(255)      not null
+#  title      :string           not null
+#  icon       :string           not null
 #  group_id   :integer          not null
 #  summary    :text             not null
-#  version    :string(255)      not null
-#  game_file  :string(255)      not null
+#  version    :string           not null
+#  game_file  :string           not null
 #  dl_count   :integer          default(0), not null
-#  movie      :string(255)
-#  format     :string(255)      not null
+#  movie      :string
+#  format     :string           not null
 #  created_at :datetime
 #  updated_at :datetime
 #
