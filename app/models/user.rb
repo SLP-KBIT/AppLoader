@@ -16,4 +16,10 @@
 class User < ActiveRecord::Base
   has_many :belongings
   has_many :groups, through: :belongings
+
+  validates :account, presence: true, uniqueness: true,
+                      format: { with: /\A[0-9a-zA-Z]+\Z/i }
+  validates :icon,    presence: true,
+                      format: { with: /\A[0-9a-zA-Z.]+\Z/i }
+  validates :name, :password_digest, :enable_flag, :admin_flag, presence: true
 end
