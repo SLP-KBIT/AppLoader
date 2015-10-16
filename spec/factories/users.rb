@@ -20,6 +20,6 @@ FactoryGirl.define do
     password_digest 'MyString'
     enable_flag false
     admin_flag false
-    icon 'MyString'
+    icon 'MyString.png'
   end
 end
