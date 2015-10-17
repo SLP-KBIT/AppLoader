@@ -13,5 +13,5 @@
 class Comment < ActiveRecord::Base
   belongs_to :game
 
-  validates :game_id, :comment, presence: true
+  validates :game_id, :content, presence: true
 end
