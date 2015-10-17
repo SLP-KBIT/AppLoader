@@ -3,8 +3,8 @@
 # Table name: pictures
 #
 #  id         :integer          not null, primary key
-#  game_id    :integer
-#  picture    :string(255)
+#  game_id    :integer          not null
+#  picture    :string           not null
 #  created_at :datetime
 #  updated_at :datetime
 #

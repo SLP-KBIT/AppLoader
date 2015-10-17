@@ -3,9 +3,9 @@
 # Table name: comments
 #
 #  id          :integer          not null, primary key
-#  game_id     :integer
-#  comment     :text
-#  contributor :string(255)
+#  game_id     :integer          not null
+#  content     :text             not null
+#  contributor :string           not null
 #  created_at  :datetime
 #  updated_at  :datetime
 #
