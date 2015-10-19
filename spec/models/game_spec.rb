@@ -3,15 +3,15 @@
 # Table name: games
 #
 #  id         :integer          not null, primary key
-#  title      :string(255)      not null
-#  icon       :string(255)      not null
+#  title      :string           not null
+#  icon       :string           not null
 #  group_id   :integer          not null
 #  summary    :text             not null
-#  version    :string(255)      not null
-#  game_file  :string(255)      not null
+#  version    :string           not null
+#  game_file  :string           not null
 #  dl_count   :integer          default(0), not null
-#  movie      :string(255)
-#  format     :string(255)      not null
+#  movie      :string
+#  format     :string           not null
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -109,7 +109,7 @@ RSpec.describe Game, type: :model do
 
   it "returns #{Game::DL_TOP} games sorted by dl_count " do
     games = []
-    group = Group.create(name: 'Group1', summary: 'hoge')
+    group = Group.create(name: 'Group1', summary: 'hoge', icon: 'hoge.png')
     Game::DL_TOP.times do |i|
       game = group.games.create(title: "TestGame#{i}",
                                 summary: 'hoge',
@@ -125,9 +125,14 @@ RSpec.describe Game, type: :model do
 
   it "returns #{Game::NEW_TOP} games sotred by update_date" do
     games = []
-    group = Group.create(name: 'Group1', summary: 'hoge')
+    group = Group.create(name: 'Group1', summary: 'hoge', icon: 'hoge.png')
     Game::NEW_TOP.times do |i|
-      game = group.games.create(title: "TestGame#{i}", summary: 'hoge', icon: 'hoge', version: '1.0', game_file: "file#{i}.exe", format: 'download')
+      game = group.games.create(title: "TestGame#{i}",
+                                summary: 'hoge',
+                                icon: 'hoge',
+                                version: '1.0',
+                                game_file: "file#{i}.exe",
+                                format: 'download')
       games.push(game)
     end
     expect(Game.new_top).to eq games.reverse
