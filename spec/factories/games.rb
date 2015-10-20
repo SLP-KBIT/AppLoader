@@ -36,13 +36,18 @@ FactoryGirl.define do
     n.days.ago
   end
 
+  counts = [10, 8, 3, 5, 6, 7, 3, 6, 2, 1]
+  sequence :dl_count do |n|
+    counts[n % counts.length]
+  end
+
   factory :games, class: Game do
     title
     icon 'sample.png'
     summary 'hoge'
     version '1.0'
     game_file 'dammy.exe'
-    dl_count { rand(1..100) }
+    dl_count
     format 'DOWNLOAD'
     association :group
     updated_at
