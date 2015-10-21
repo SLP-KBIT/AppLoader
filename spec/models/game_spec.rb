@@ -107,34 +107,21 @@ RSpec.describe Game, type: :model do
     end
   end
 
-  it "returns #{Game::DL_TOP} games sorted by dl_count " do
-    games = []
-    group = Group.create(name: 'Group1', summary: 'hoge', icon: 'hoge.png')
-    Game::DL_TOP.times do |i|
-      game = group.games.create(title: "TestGame#{i}",
-                                summary: 'hoge',
-                                icon: 'hoge',
-                                version: '1.0',
-                                game_file: "file#{i}.exe",
-                                format: 'download',
-                                dl_count: Game::DL_TOP - i + 1)
-      games.push(game)
+  describe '#dl_top' do
+    let(:games) { create_list(:games, 10) }
+
+    it "returns #{Game::DL_TOP} games sorted by dl_count " do
+      games.sort! { |a, b| (b.dl_count <=> a.dl_count).nonzero? || (a.title <=> b.title) }
+      expect(Game.dl_top).to eq games.first(Game::DL_TOP)
     end
-    expect(Game.dl_top).to eq games
   end
 
-  it "returns #{Game::NEW_TOP} games sotred by update_date" do
-    games = []
-    group = Group.create(name: 'Group1', summary: 'hoge', icon: 'hoge.png')
-    Game::NEW_TOP.times do |i|
-      game = group.games.create(title: "TestGame#{i}",
-                                summary: 'hoge',
-                                icon: 'hoge',
-                                version: '1.0',
-                                game_file: "file#{i}.exe",
-                                format: 'download')
-      games.push(game)
+  describe '#new_top' do
+    let(:games) { create_list(:games, 10) }
+
+    it "returns #{Game::NEW_TOP} games sotred by update_date" do
+      games.sort! { |a, b| (b.updated_at <=> a.updated_at) || (a.title <=> b.title) }
+      expect(Game.new_top).to eq games.first(Game::NEW_TOP)
     end
-    expect(Game.new_top).to eq games.reverse
   end
 end
