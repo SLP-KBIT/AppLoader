@@ -23,4 +23,13 @@ RSpec.describe Tag, type: :model do
       expect(tag.errors[:name]).to include("can't be blank")
     end
   end
+
+  context 'when has a duplicate name' do
+    let(:tag) { create(:tag) }
+    it do
+      duplicate_tag = Tag.new(name: tag.name)
+      duplicate_tag.valid?
+      expect(duplicate_tag.errors[:name]).to include('has already been taken')
+    end
+  end
 end
