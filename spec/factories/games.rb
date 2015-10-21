@@ -26,6 +26,10 @@ FactoryGirl.define do
     dl_count 0
     format 'DOWNLOAD'
     association :group
+
+    after(:create) do |game|
+      create(:tagging, game: game, tag: create(:tag))
+    end
   end
 
   sequence :title do |n|
