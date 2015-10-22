@@ -83,9 +83,17 @@ RSpec.describe User, type: :model do
 
   context 'when has an invalid account' do
     it do
-      user.account = 'ほげ'
+      user.account = 'アカウント'
       user.valid?
       expect(user.errors[:account]).to include('is invalid')
+    end
+  end
+
+  context 'when has an invalid icon' do
+    it do
+      user.icon = 'pic.exe'
+      user.valid?
+      expect(user.errors[:icon]).to include('is invalid')
     end
   end
 end
