@@ -27,7 +27,7 @@ class Game < ActiveRecord::Base
   validates :group_id, inclusion: { in: proc { Group.pluck(:id) } }, presence: true
   validates :summary, :format, presence: true
   validates :icon, presence: true, format: { with: /\A[0-9a-zA-Z.]+\Z/i }
-  validates :game_file, format: { with: /\A([0-9a-zA-Z]+\.[0-9a-zA-Z]+)|^$\Z/i }
+  validates :game_file, format: { with: /\A([0-9a-zA-Z]+\.[0-9a-zA-Z]+)\Z|\A\Z/i }
   validates :version, format: { with: /\A[0-9.]*\Z/i }
 
   validates :movie, format: { with: /\A[0-9a-zA-Z.]*\Z/i }
