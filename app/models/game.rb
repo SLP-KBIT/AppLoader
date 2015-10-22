@@ -26,11 +26,11 @@ class Game < ActiveRecord::Base
   validates :title, uniqueness: true, presence: true
   validates :group_id, inclusion: { in: proc { Group.pluck(:id) } }, presence: true
   validates :summary, :format, presence: true
-  validates :icon, presence: true, format: { with: /\A[0-9a-zA-Z.]+\Z/i }
-  validates :game_file, format: { with: /\A([0-9a-zA-Z]+\.[0-9a-zA-Z]+)\Z|\A\Z/i }
+  validates :icon, presence: true, format: { with: /\A[0-9a-zA-Z]+\.(png|jpeg|jpg)\Z/i }
+  validates :game_file, format: { with: /(\A[0-9a-zA-Z]+\.(exe|html)+\Z)|(\A\Z)/i }
   validates :version, format: { with: /\A[0-9.]*\Z/i }
 
-  validates :movie, format: { with: /\A[0-9a-zA-Z.]*\Z/i }
+  validates :movie, format: { with: /(\A[0-9a-zA-Z]+\.(mp4|wmv|avi)\Z)|(\A\Z)/i }
   validates :group_id, :dl_count, presence: true,
                                   format: { with: /\A[0-9]+\Z/i }
 

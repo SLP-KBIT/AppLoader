@@ -34,6 +34,15 @@ RSpec.describe Game, type: :model do
     end
   end
 
+  context 'when has a duplicate title' do
+    it do
+      game.save
+      duplicate_game = Game.new(title: game.title)
+      duplicate_game.valid?
+      expect(duplicate_game.errors[:title]).to include('has already been taken')
+    end
+  end
+
   context 'when icon is nil' do
     it do
       game.icon = nil
@@ -47,6 +56,14 @@ RSpec.describe Game, type: :model do
       game.group_id = nil
       game.valid?
       expect(game.errors[:group_id]).to include("can't be blank")
+    end
+  end
+
+  context "when group_id doesn't included in Group" do
+    it do
+      game = Game.new(group_id: -1)
+      game.valid?
+      expect(game.errors[:group_id]).to include('is not included in the list')
     end
   end
 
@@ -104,20 +121,18 @@ RSpec.describe Game, type: :model do
     end
   end
 
-  context 'when has a duplicate title' do
+  context 'when movie is nil' do
     it do
-      game.save
-      duplicate_game = Game.new(title: game.title)
-      duplicate_game.valid?
-      expect(duplicate_game.errors[:title]).to include('has already been taken')
+      game.movie = nil
+      expect(game).to be_valid
     end
   end
 
-  context "when group_id doesn't included in Group" do
+  context 'when movie is invalid extension' do
     it do
-      game = Game.new(group_id: -1)
+      game.movie = 'hoge.exe'
       game.valid?
-      expect(game.errors[:group_id]).to include('is not included in the list')
+      expect(game.errors[:movie]).to include('is invalid')
     end
   end
 
