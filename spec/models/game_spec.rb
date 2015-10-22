@@ -7,8 +7,8 @@
 #  icon       :string           not null
 #  group_id   :integer          not null
 #  summary    :text             not null
-#  version    :string           not null
-#  game_file  :string           not null
+#  version    :string
+#  game_file  :string
 #  dl_count   :integer          default(0), not null
 #  movie      :string
 #  format     :string           not null
@@ -55,6 +55,36 @@ RSpec.describe Game, type: :model do
       game.summary = nil
       game.valid?
       expect(game.errors[:summary]).to include("can't be blank")
+    end
+  end
+
+  context 'when version is nil' do
+    it do
+      game.version = nil
+      expect(game).to be_valid
+    end
+  end
+
+  context 'when version is invalid format' do
+    it do
+      game.version = 'hoge'
+      game.valid?
+      expect(game.errors[:version]).to include('is invalid')
+    end
+  end
+
+  context 'when game_file is nil' do
+    it do
+      game.game_file = nil
+      expect(game).to be_valid
+    end
+  end
+
+  context 'when game_file is invalid format' do
+    it do
+      game.game_file = 'hogeexe'
+      game.valid?
+      expect(game.errors[:game_file]).to include('is invalid')
     end
   end
 

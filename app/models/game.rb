@@ -7,8 +7,8 @@
 #  icon       :string           not null
 #  group_id   :integer          not null
 #  summary    :text             not null
-#  version    :string           not null
-#  game_file  :string           not null
+#  version    :string
+#  game_file  :string
 #  dl_count   :integer          default(0), not null
 #  movie      :string
 #  format     :string           not null
