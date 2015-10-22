@@ -58,22 +58,6 @@ RSpec.describe Game, type: :model do
     end
   end
 
-  context 'when version is nil' do
-    it do
-      game.version = nil
-      game.valid?
-      expect(game.errors[:version]).to include("can't be blank")
-    end
-  end
-
-  context 'when game_file is nil' do
-    it do
-      game.game_file = nil
-      game.valid?
-      expect(game.errors[:game_file]).to include("can't be blank")
-    end
-  end
-
   context 'when dl_count is nil' do
     it do
       game.dl_count = nil
