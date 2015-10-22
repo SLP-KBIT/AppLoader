@@ -7,8 +7,8 @@
 #  icon       :string           not null
 #  group_id   :integer          not null
 #  summary    :text             not null
-#  version    :string           not null
-#  game_file  :string           not null
+#  version    :string
+#  game_file  :string
 #  dl_count   :integer          default(0), not null
 #  movie      :string
 #  format     :string           not null
@@ -25,12 +25,14 @@ class Game < ActiveRecord::Base
 
   validates :title, uniqueness: true, presence: true
   validates :group_id, inclusion: { in: proc { Group.pluck(:id) } }, presence: true
-  validates :summary, :version, :format, presence: true
-  validates :icon, :game_file, presence: true,
-                               format: { with: /\A[0-9a-zA-Z.]+\Z/i }
-  validates :movie, format: { with: /\A[0-9a-zA-Z.]*\Z/i }
+  validates :summary, :format, presence: true
+  validates :icon, presence: true, format: { with: /\A[0-9a-z]+\.(png|jpeg|jpg)\Z/i }
+  validates :game_file, format: { with: /(\A[0-9a-z]+\.(exe|html)\Z)|(\A\Z)/i }
+  validates :version, format: { with: /\A[0-9.]*\Z/ }
+
+  validates :movie, format: { with: /(\A[0-9a-z]+\.(mp4|wmv|avi)\Z)|(\A\Z)/i }
   validates :group_id, :dl_count, presence: true,
-                                  format: { with: /\A[0-9]+\Z/i }
+                                  format: { with: /\A[0-9]+\Z/ }
 
   DL_TOP = 5
   NEW_TOP = 10
