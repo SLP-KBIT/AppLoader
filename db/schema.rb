@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20151001094336) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.integer  "game_id",    null: false
-    t.string   "picture",    null: false
+    t.integer  "game_id",      null: false
+    t.string   "picture_file", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
