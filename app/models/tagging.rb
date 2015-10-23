@@ -11,5 +11,8 @@ class Tagging < ActiveRecord::Base
   belongs_to :game
   belongs_to :tag
 
-  validates :game_id, :tag_id, presence: true
+  validates :game_id, presence: true, format: { with: /\A[0-9]+\Z/ },
+                      inclusion: { in: proc { Game.pluck(:id) } }
+  validates :game_id, presence: true, format: { with: /\A[0-9]+\Z/ },
+                      inclusion: { in: proc { Group.pluck(:id) } }
 end
