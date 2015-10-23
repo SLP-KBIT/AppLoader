@@ -10,5 +10,13 @@
 require 'rails_helper'
 
 RSpec.describe Tagging, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:tag1) { create(:tag) }
+  let(:tag2) { create(:tag) }
+  let(:game) { create(:game, tags: [tag1, tag2]) }
+
+  context 'hoge' do
+    it do
+
+    end
+  end
 end
