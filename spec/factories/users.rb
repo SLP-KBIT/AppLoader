@@ -15,11 +15,11 @@
 
 FactoryGirl.define do
   factory :user do
-    account 'MyString'
-    name 'MyString'
-    password_digest 'MyString'
-    enable_flag false
-    admin_flag false
-    icon 'MyString.png'
+    account 'engineer'
+    name 'Enineer'
+    password_digest 'password'
+    enable_flag true
+    admin_flag true
+    icon 'hoge.png'
   end
 end
