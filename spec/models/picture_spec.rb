@@ -34,12 +34,20 @@ RSpec.describe Picture, type: :model do
     end
   end
 
-  context 'when has aduplicate picture' do
+  context 'when has aduplicate picture_file' do
     it do
       picture.save
       duplicate_picture = Picture.new(picture_file: picture.picture_file)
       duplicate_picture.valid?
       expect(duplicate_picture.errors[:picture_file]).to include('has already been taken')
+    end
+  end
+
+  context 'when picture_file is invalid format' do
+    it do
+      picture.picture_file = 'hoge.exe'
+      picture.valid?
+      expect(picture.errors[:picture_file]).to include('is invalid')
     end
   end
 end
