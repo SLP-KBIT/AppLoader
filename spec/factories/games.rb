@@ -27,9 +27,6 @@ FactoryGirl.define do
     format 'DOWNLOAD'
     association :group
     movie 'hoge.avi'
-    after(:create) do |game|
-      create(:tagging, game: game, tag: create(:tag))
-    end
   end
 
   sequence :title do |n|
