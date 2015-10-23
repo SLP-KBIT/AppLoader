@@ -12,8 +12,8 @@
 
 FactoryGirl.define do
   factory :comment do
-    game_id 1
-    comment 'MyText'
-    contributor 'MyString'
+    content 'hoge'
+    contributor '太郎'
+    association :game
   end
 end
