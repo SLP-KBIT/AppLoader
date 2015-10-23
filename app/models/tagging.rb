@@ -11,7 +11,6 @@ class Tagging < ActiveRecord::Base
   belongs_to :game
   belongs_to :tag
 
-  validates :game_id, :tag_id, presence: true
-  validates :game_id, inclusion: { in: proc { Game.pluck(:id) } }
-  validates :tag_id,  inclusion: { in: proc { Tag.pluck(:id) } }
+  validates :game_id, presence: true, inclusion: { in: proc { Game.pluck(:id) } }
+  validates :tag_id, presence: true, inclusion: { in: proc { Tag.pluck(:id) } }
 end
