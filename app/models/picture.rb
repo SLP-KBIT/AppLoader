@@ -12,8 +12,7 @@
 class Picture < ActiveRecord::Base
   belongs_to :game
 
-  validates :game_id, presence: true, uniqueness: true,
-                      format: { with: /\A[0-9]+\Z/i }
+  validates :game_id, presence: true, uniqueness: true
   validates :picture, presence: true,
                       format: { with: /\A[0-9a-z]+\.(png|jpeg|jpg)\Z/i }
 end
