@@ -9,5 +9,7 @@
 
 FactoryGirl.define do
   factory :belonging do
+    association :user
+    association :group
   end
 end
