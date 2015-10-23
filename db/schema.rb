@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016123831) do
+ActiveRecord::Schema.define(version: 20151001094336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,18 +34,13 @@ ActiveRecord::Schema.define(version: 20151016123831) do
     t.string   "icon",                   null: false
     t.integer  "group_id",               null: false
     t.text     "summary",                null: false
-    t.string   "version",                null: false
-    t.string   "game_file",              null: false
+    t.string   "version"
+    t.string   "game_file"
     t.integer  "dl_count",   default: 0, null: false
     t.string   "movie"
     t.string   "format",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "games_tags", force: :cascade do |t|
-    t.integer "game_id"
-    t.integer "tag_id"
   end
 
   create_table "groups", force: :cascade do |t|

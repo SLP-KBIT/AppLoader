@@ -13,5 +13,10 @@
 class Comment < ActiveRecord::Base
   belongs_to :game
 
-  validates :game_id, :content, presence: true
+  validates :content, :contributor, presence: true
+  validates :game_id, inclusion: { in: proc { Game.pluck(:id) } }, presence: true
+
+  before_validation do
+    self.contributor = '名無し' if contributor.nil?
+  end
 end
