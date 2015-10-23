@@ -26,6 +26,14 @@ RSpec.describe Picture, type: :model do
     end
   end
 
+  context "when game_id isn't include in Game" do
+    it do
+      picture.game_id = -1
+      picture.valid?
+      expect(picture.errors[:game_id]).to include('is not included in the list')
+    end
+  end
+
   context 'when picture_file is nil' do
     it do
       picture.picture_file = nil

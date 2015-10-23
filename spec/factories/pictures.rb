@@ -11,7 +11,7 @@
 
 FactoryGirl.define do
   factory :picture do
-    game_id 1
+    association :game
     picture_file 'MyString.png'
   end
 end
