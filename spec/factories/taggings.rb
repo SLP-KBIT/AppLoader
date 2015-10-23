@@ -9,5 +9,7 @@
 
 FactoryGirl.define do
   factory :tagging do
+    game
+    tag
   end
 end
