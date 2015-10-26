@@ -17,5 +17,5 @@ class Group < ActiveRecord::Base
 
   validates :name, :summary, presence: true
   validates :icon, presence: true,
-                   format: { with: /\A[0-9a-zA-Z.]+\Z/i }
+                   format: { with: /\A[0-9a-z]+\.(png|jpeg|jpg)\Z/i }
 end
