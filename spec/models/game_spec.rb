@@ -51,6 +51,14 @@ RSpec.describe Game, type: :model do
     end
   end
 
+  context 'when icon is invalid format' do
+    it do
+      game.icon = 'hoge.exe'
+      game.valid?
+      expect(game.errors[:icon]).to include('is invalid')
+    end
+  end
+
   context 'when group is nil' do
     it do
       game.group_id = nil
@@ -99,7 +107,7 @@ RSpec.describe Game, type: :model do
 
   context 'when game_file is invalid format' do
     it do
-      game.game_file = 'hogeexe'
+      game.game_file = 'hoge.xlsx'
       game.valid?
       expect(game.errors[:game_file]).to include('is invalid')
     end
@@ -118,6 +126,14 @@ RSpec.describe Game, type: :model do
       game.format = nil
       game.valid?
       expect(game.errors[:format]).to include("can't be blank")
+    end
+  end
+
+  context 'when format is not allowed format' do
+    it do
+      game.format = 'hoge'
+      game.valid?
+      expect(game.errors[:format]).to include('is not included in the list')
     end
   end
 
