@@ -17,6 +17,11 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'simplecov'
+require 'codeclimate-test-reporter'
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  CodeClimate::TestReporter::Formatter
+]
 SimpleCov.start 'rails' do
   add_filter '/.direnv'
   add_filter '/vendor'
