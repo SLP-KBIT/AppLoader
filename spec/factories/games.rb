@@ -24,7 +24,7 @@ FactoryGirl.define do
     version '1.0'
     game_file 'dammy.exe'
     dl_count 0
-    format 'DOWNLOAD'
+    format Game::FORMAT.keys[0]
     association :group
     movie 'hoge.avi'
   end
@@ -49,7 +49,7 @@ FactoryGirl.define do
     version '1.0'
     game_file 'dammy.exe'
     dl_count
-    format 'DOWNLOAD'
+    format Game::FORMAT.keys[0]
     association :group
     updated_at
   end

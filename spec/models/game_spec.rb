@@ -121,6 +121,14 @@ RSpec.describe Game, type: :model do
     end
   end
 
+  context 'when format is not allowed format' do
+    it do
+      game.format = 'hoge'
+      game.valid?
+      expect(game.errors[:format]).to include('is not included in the list')
+    end
+  end
+
   context 'when movie is nil' do
     it do
       game.movie = nil
