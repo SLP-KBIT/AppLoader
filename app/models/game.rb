@@ -28,7 +28,7 @@ class Game < ActiveRecord::Base
   DL_TOP = 5
   NEW_TOP = 10
 
-  FORMAT = { 'BROWSER' => 100, 'PC' => 200 }
+  FORMAT = { 'BROWSER' => 'ブラウザゲーム', 'PC' => 'PCゲーム' }
 
   # validation
   validates :title, uniqueness: true, presence: true

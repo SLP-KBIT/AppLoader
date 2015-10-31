@@ -2,103 +2,92 @@
   .col-xs-2
   .col-xs-8
 
-    h1 ゲームのアップロード        
-    form
+    h1 ゲームのアップロード
+    = form_for @game do |f|
+      .form-group
+        .row
+          .col-xs-4 style="text-align:right"
+            = f.label :game_file, 'アップロードするファイル', class: 'control-label'
+          .col-xs-8
+            = f.file_field :game_file
+
       .form-group
          .row
            .col-xs-4 style="text-align:right"
-             label.control-label
-               |アップロードするゲーム
+             = f.label :format, 'プラットフォーム'
            .col-xs-8
-             input type="file"
-    
-      .form-group
-         .row
-           .col-xs-4 style="text-align:right"
-             label.control-label プラットフォーム
-           .col-xs-8
-             select.form-control
-               option プラットフォームを選択
-               option オンライン
-               option パソコン
-               option スマートフォン
-    
-     
+             = f.select :format, Game::FORMAT.invert, {}, class: 'form-control'
+
       .form-group
         .row
           .col-xs-4 style="text-align:right"
-            label.control-label タイトル
+            = f.label :title, 'タイトル'
           .col-xs-8
-            input.form-control type="text" placeholder="ゲームのタイトル"
-       
+            = f.text_field :title, class: 'form-control', placeholder: "ゲームのタイトル"
+
       .form-group
         .row
           .col-xs-4 style="text-align:right"
-            label.control-label バージョン
+            = f.label :icon, 'バージョン'
           .col-xs-8
-            input.form-control type="text" placeholder="(例) 1.1.2"
-      
-    
+            = f.text_field :version, class: 'form-control', placeholder: "(例) 1.1.2"
+
+
       .form-group
         .row
           .col-xs-4 style="text-align:right"
-            label.control-label アイコン画像
+            = f.label :icon, 'アイコン画像'
           .col-xs-8
-            input type="file"
-    
+            = f.file_field :icon
+
       .form-group
         .row
           .col-xs-4 style="text-align:right"
-            label.control-label 作成したグループ
+            = f.label '作成したグループ'
           .col-xs-8
-            select.form-control
-              option グループを選択
-              option Group A
-              option Group C
-              option Group F
-              option Group G
-      
-      div style="margin:40px 0px"
-        .form-group
-          .row
-            .col-xs-4 style="text-align:right"
-              label.control-label タグ1
-            .col-xs-8
-              input.form-control type="text" placeholder="タグ名"
+            = f.collection_select :group_id, @groups, :id, :name, {}, class: 'form-control'
+
+      / div style="margin:40px 0px"
+      /   .form-group
+      /     .row
+      /       .col-xs-4 style="text-align:right"
+      /         label.control-label タグ1
+      /       .col-xs-8
+      /         input.form-control type="text" placeholder="タグ名"
+      /   .row
+      /     .col-xs-4 style="text-align:right"
+      /       button.btn.btn-default.btn-sm
+      /         span.glyphicon.glyphicon-plus
+      /         |&nbspフォームを追加
+
+
+      .form-group
         .row
-          .col-xs-4 style="text-align:right"
-            button.btn.btn-default.btn-sm
-              span.glyphicon.glyphicon-plus
-              |&nbspフォームを追加
-      
-      
+          .col-xs-4[style="text-align:right"]
+            = f.label '説明文'
+          .col-xs-8
+            = f.text_area :summary, placeholder: "マークダウン記法で書いてください。", size: '30×30'
+
+      / div style="margin:40px 0px"
+      /   .form-group
+      /     .row
+      /       .col-xs-4 style="text-align:right"
+      /         = f.label :picture "キャプチャ画像1"
+      /       .col-xs-8
+      /         = f.file_field :icon
+        / .row
+        /   .col-xs-4 style="text-align:right"
+        /     button.btn.btn-default.btn-sm
+        /       span.glyphicon.glyphicon-plus
+        /       |&nbsp フォームを追加
+
+
       .form-group
         .row
           .col-xs-4 style="text-align:right"
-            label.control-control 説明文
+            = f.label '動画'
           .col-xs-8
-            textarea.form-control rows="7" placeholder="マークダウン記法で書いてください。"
-      
-      div style="margin:40px 0px"
-        .form-group
-          .row
-            .col-xs-4 style="text-align:right"
-              label.control-label キャプチャ画像1
-            .col-xs-8
-              input.h5 type="file"
-        .row
-          .col-xs-4 style="text-align:right"
-            button.btn.btn-default.btn-sm
-              span.glyphicon.glyphicon-plus
-              |&nbsp フォームを追加
-      
-      
-      .form-group
-        .row
-          .col-xs-4 style="text-align:right"
-            label.control-label 動画
-          .col-xs-8
-            input.h5 type="file"
-      
-      div style="text-align:right"
-        = link_to("アップロード", game_path(1), method: :get, class:"btn btn-primary") 
+            = f.file_field :movie
+
+      div[style="text-align:right"]
+        = f.submit 'アップロード'
