@@ -34,3 +34,7 @@ config/database.yml
 bower.json
 *.swap
 *.back
+data/
+public/game/
+public/movie/
+public/icon/
